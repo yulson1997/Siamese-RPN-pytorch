@@ -45,7 +45,7 @@ parser.add_argument('--debug', default=False, type=bool,  help='whether to debug
 
 def main():
     """ train dataloader """
-    args = parser.parse_args()
+    args = parser.parse_args()[0]
     data_loader = TrainDataLoader(args.train_path, check = args.debug)
     if not os.path.exists(args.weight_dir):
         os.makedirs(args.weight_dir)
